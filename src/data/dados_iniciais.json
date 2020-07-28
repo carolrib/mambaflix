@@ -1,0 +1,113 @@
+{
+  "categorias": [
+    {
+      "titulo": "DevOps",
+      "link": "https://cursos.alura.com.br/formacao-devops",
+      "cor": "#d64f52",
+      "link_extra": {
+        "text": "Formação Devops na Alura",
+        "url": "https://cursos.alura.com.br/formacao-devops"
+      },
+      "videos": [
+        {
+          "titulo": "Black Mamba in Action na Pandemia",
+          "url": "https://www.youtube.com/watch?v=7kSuas6mRpk"
+        },
+        {
+          "titulo": "O que é Devops? #AluraMais",
+          "url": "https://www.youtube.com/watch?v=3_k2GVkMt30"
+        },
+        {
+          "titulo": "DevOps: Bate papo com Edson Yanaga e Bruno Souza",
+          "url": "https://www.youtube.com/watch?v=CXEQ1dNp1Xo"
+        },
+        {
+          "titulo": "5 ERROS QUE TORNAM SUA API INÚTIL - Bruno JavaMan Souza",
+          "url": "https://www.youtube.com/watch?v=RpmyUY5mdXY"
+        },
+        {
+          "titulo": "Entendendo 'Devops' para Iniciantes em Programação",
+          "url": "https://www.youtube.com/watch?v=bwO8EZf0gLI"
+        }       
+      ]
+    },
+    {
+      "titulo": "Videoclipes intrigantes",
+      "cor": "#00C86F",
+      "videos": [
+        {
+          "titulo": "Pearl Jam - Do the Evolution",
+          "url": "https://www.youtube.com/watch?v=aDaOgu2CQtI"
+        },
+        {
+          "titulo": "Right Here, Right Now by Fatboy Slim",
+          "url": "https://www.youtube.com/watch?v=ub747pprmJ8"
+        },
+        {
+          "titulo": "The Smashing Pumpkins - Tonight, Tonight",
+          "url": "https://www.youtube.com/watch?v=NOG3eus4ZSo"
+        },
+        {
+          "titulo": "Michael Jackson - Black Or White",
+          "url": "https://www.youtube.com/watch?v=F2AitTPI5U0"
+        }, 
+        {
+          "titulo": "Korn - Freak On a Leash",
+          "url": "https://www.youtube.com/watch?v=jRGrNDV2mKc"
+        }
+      ]
+    },
+    {
+      "titulo": "Vamos ficar Ricos. Ai que festa!!!",
+      "cor": "#f56a25",
+      "link_extra": {
+        "text": "Como diversificar seus investimentos",
+        "url": "https://www.youtube.com/watch?v=kmJNYV5rZA0"
+      },
+      "videos": [
+        {
+          "titulo": "SOCORRO! Selic 2,25% É hora de investir em FUNDOS DE INVESTIMENTOS?",
+          "url": "https://www.youtube.com/watch?v=hWoPwfhgzUE"
+        },
+        {
+          "titulo": "COMO GANHAR DINHEIRO COM AÇÕES? APENAS PARA INICIANTES",
+          "url": "https://www.youtube.com/watch?v=0xsFhL9sXxo"
+        },
+        {
+          "titulo": "TOP 5 AÇÕES QUE MAIS VALORIZARAM NA QUARENTENA!",
+          "url": "https://www.youtube.com/watch?v=Qm25cdjSqA0"
+        },
+        {
+          "titulo": "GANHE DINHEIRO EM 2020! TOP 6 investimentos do ano! De Tesouro a Fundos Imobiliários",
+          "url": "https://www.youtube.com/watch?v=-HJn3vgOx_M"
+        },
+        {
+          "titulo": "O VERDADEIRO RISCO DA RENDA VARIÁVEL!",
+          "url": "https://www.youtube.com/watch?v=tdOpU2ug1ik"
+        }
+      ]
+    },
+    {
+      "titulo": "Black Mamba in Action",
+      "cor": "yellow",
+      "videos": [
+        {
+          "titulo": "Black Mamba vs Gogo - Kill Bill",
+          "url": "https://www.youtube.com/watch?v=gXlc0KQb9_E"
+        },
+        {
+          "titulo": "Black Mamba vs Mountain Snake",
+          "url": "https://www.youtube.com/watch?v=_0OADEe0-Ro"
+        },
+        {
+          "titulo": "Black Mamba vs Copperhead",
+          "url": "https://www.youtube.com/watch?v=hj_YzvjJw8Q"
+        },
+        {
+          "titulo": "The Black Mamba vs O-Ren Ishii's bodyguards",
+          "url": "https://www.youtube.com/watch?v=TcXvAeIUxQE"
+        }
+      ]
+    }
+  ]
+}
