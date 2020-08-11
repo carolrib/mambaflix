@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable linebreak-style */
 import React from 'react';
 import { FooterBase } from './styles';
 

@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import React from 'react';
 import VideoIframeResponsive from './components/VideoIframeResponsive';
 import { BannerMainContainer, ContentAreaContainer, WatchButton } from './styles';
@@ -35,9 +36,12 @@ export default function BannerMain({
           <VideoIframeResponsive
             youtubeID={youTubeID}
           />
-          <WatchButton>
-            Assistir
-          </WatchButton>
+          <a href={url} rel="noopener" target="_blank">
+            <WatchButton>
+              Assistir
+            </WatchButton>
+          </a>
+          
         </ContentAreaContainer.Item>
       </ContentAreaContainer>
     </BannerMainContainer>

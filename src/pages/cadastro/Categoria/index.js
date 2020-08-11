@@ -1,115 +1,109 @@
+/* eslint-disable linebreak-style */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
+import useForm from '../../../hooks/useForm';
+import categoriasRepository from '../../../repositories/categorias';
 
 function CadastroCategoria() {
+
   const valoresIniciais = {
-    nome: '',
+    titulo: '',
     descricao: '',
     cor: '',
   };
+
+  const { handleChange, values } = useForm(valoresIniciais);
   const [categorias, setCategorias] = useState([]);
-  const [values, setValues] = useState(valoresIniciais);
-
-  function setValue(chave, valor) {
-    // chave: nome, descricao, bla, bli
-    setValues({
-      ...values,
-      [chave]: valor, // nome: 'valor'
-    });
-  }
-
-  function handleChange(infosDoEvento) {
-    setValue(
-      infosDoEvento.target.getAttribute('name'),
-      infosDoEvento.target.value,
-    );
-  }
 
   useEffect(() => {
-    if (window.location.href.includes('localhost')) {
-      const URL = 'https://mambaflix.herokuapp.com/categorias';
-      fetch(URL)
-        .then(async (respostaDoServer) => {
-          if (respostaDoServer.ok) {
-            const resposta = await respostaDoServer.json();
-            setCategorias(resposta);
-            return;
-          }
-          throw new Error('Não foi possível pegar os dados');
-        });
-    }
+    categoriasRepository.getAll()
+      .then((categoriasDB) => {
+        console.log(categoriasDB);
+        setCategorias([...categoriasDB]);
+      })
+      .catch((err) => {
+        // tratar essa saída de erro
+        console.log(err.message);
+      });
   }, []);
 
   return (
     <PageDefault>
       <h1>
-        Cadastro de Categoria:
-        {' '}
-        {values.nome}
+        Cadastro de Categoria
       </h1>
 
       <form onSubmit={function handleSubmit(infosDoEvento) {
         infosDoEvento.preventDefault();
 
-        setCategorias([
-          ...categorias,
-          values,
-        ]);
-
-        setValues(valoresIniciais);
+        categoriasRepository.create({
+          titulo: values.titulo,
+          cor: values.cor,
+          link_extra: { text: '', url: '' },
+        })
+          .then(() => {
+            setCategorias([...categorias, values]);
+            console.log('Cadastrou categoria com sucesso!');
+          });
       }}
       >
+        <div>
+          <FormField
+            label="Nome da Categoria"
+            type="text"
+            name="titulo"
+            value={values.titulo}
+            onChange={handleChange}
+          />
 
-        <FormField
-          label="Nome da Categoria"
-          type="nome"
-          name="nome"
-          value={values.nome}
-          onChange={handleChange}
-        />
+          <FormField
+            label="Descrição"
+            type="text"
+            name="descricao"
+            value={values.descricao}
+            onChange={handleChange}
+          />
 
-        <FormField
-          label="Descrição:"
-          type="textarea"
-          name="descricao"
-          value={values.descricao}
-          onChange={handleChange}
-        />
+          <FormField
+            label="Cor"
+            type="color"
+            name="cor"
+            value={values.cor}
+            onChange={handleChange}
+          />
 
-        <FormField
-          label="Cor"
-          type="color"
-          name="cor"
-          value={values.cor}
-          onChange={handleChange}
-        />
-
-        <Button>
-          Cadastrar
-        </Button>
+          <Button type="submit">
+            Cadastrar
+          </Button>
+        </div>
       </form>
 
-      {categorias.length === 0 && (
+      {categorias.length === 0
+        && (
         <div>
-          {/* Cargando... */}
-          Loading...
+          {/* Carregando.. */}
+          Loading
         </div>
-      )}
-
+        )}
       <ul>
-        {categorias.map((categoria, indice) => (
-          <li key={`${categoria}${indice}`}>
-            {categoria.titulo}
-          </li>
+        {categorias.map((categoria) => (
+          <li key={`${categoria.titulo}`}>{categoria.titulo}</li>
         ))}
       </ul>
+      <p>
+        <Link to="/">
+          Ir para home
+        </Link>
+      </p>
+      <p>
+        <Link to="/cadastro/video">
+          Ir para Cadastro de Vídeo
+        </Link>
+      </p>
 
-      <Link to="/">
-        Ir para home
-      </Link>
     </PageDefault>
   );
 }
