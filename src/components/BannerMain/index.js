@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable linebreak-style */
 import React from 'react';
 import VideoIframeResponsive from './components/VideoIframeResponsive';
@@ -41,7 +42,6 @@ export default function BannerMain({
               Assistir
             </WatchButton>
           </a>
-          
         </ContentAreaContainer.Item>
       </ContentAreaContainer>
     </BannerMainContainer>
